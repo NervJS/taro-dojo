@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import * as PropTypes from 'prop-types';
+import * as PropTypes from 'prop-types'
 import { View } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 

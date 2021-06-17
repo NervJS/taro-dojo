@@ -1,9 +1,10 @@
 import Taro from '@tarojs/taro'
-import React, {Component} from 'react'
-import * as PropTypes from 'prop-types';
-import {View, Text} from '@tarojs/components'
-import {AtButton, AtMessage} from 'taro-ui'
-import Experiment from './experiment';
+import React, { Component } from 'react'
+import * as PropTypes from 'prop-types'
+import { View, Text } from '@tarojs/components'
+import { AtButton, AtMessage } from 'taro-ui'
+
+import Experiment from './experiment'
 import './index.less'
 
 export default class Index extends Component {
@@ -11,18 +12,25 @@ export default class Index extends Component {
     text: 'Hello World!'
   }
 
-  handleClick(type) {
-    Taro.atMessage({type, message: '哟，这是一条消息'})
+  handleClick (type) {
+    Taro.atMessage({
+      type,
+      message: '哟，这是一条消息'
+    })
   }
 
-  async handleRequest() {
+  async handleRequest () {
     const url = 'https://api.jikan.moe/v3'
-    const response = await Taro.request({url})
-    this.setState({text: response.data.Website})
+    const response = await Taro.request({
+      url
+    })
+    this.setState({
+      text: response.data.Website
+    })
   }
 
-  render() {
-    const {theme} = this.props
+  render () {
+    const { theme } = this.props
 
     const type = theme === 'light' ? 'secondary' : 'primary'
     const button = <AtButton type={type} onClick={this.handleRequest.bind(this)}>点击发送请求</AtButton>
@@ -39,5 +47,5 @@ export default class Index extends Component {
 }
 
 Index.propTypes = {
-  theme: PropTypes.string,
+  theme: PropTypes.string
 }

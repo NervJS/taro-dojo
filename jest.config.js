@@ -11,5 +11,5 @@ module.exports = {
   rootDir: __dirname,
   setupFiles: ['<rootDir>/test/setup'],
   moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json'],
-  transformIgnorePatterns: ['<rootDir>/node_modules/(?!@taro)', '^.+\\.(css|sass|scss|less)$'],
-};
+  transformIgnorePatterns: ['<rootDir>/node_modules/(?!@taro)', '^.+\\.(css|sass|scss|less)$']
+}
