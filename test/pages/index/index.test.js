@@ -2,11 +2,6 @@ import React from 'react'
 import Index from '../../../src/pages/index/index'
 import { shallow } from 'enzyme'
 
-jest.mock('@tarojs/taro', () => ({
-  request: () => new Promise((resolve) => resolve({ data: { Website: 'fake response' } })),
-  getEnv: () => 'env'
-}))
-
 const delay = async (ms = 50) => {
   return new Promise((resolve) => setTimeout(() => resolve(), ms))
 }
